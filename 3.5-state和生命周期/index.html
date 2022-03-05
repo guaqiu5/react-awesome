@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+</body>
+<!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin"></script>
+<!-- 将jsx通过babel转为js -->
+<script type="text/babel">
+  class Clock extends React.Component{
+      constructor(props){
+          super(props)
+          this.state={date:new Date()}
+      }
+      componentDidMount(){
+        this.timerID=setInterval(()=>{this.tick()},1000)
+      }
+      componentWillUnmount(){
+        clearInterval(this.timerID)
+      }
+
+      tick(){
+          this.setState({date:new Date()})
+      }
+      render(){
+          return <div>
+            <h1>Clock</h1>
+            <h3>Now:{this.state.date.toLocaleTimeString()}</h3>
+            </div>
+      }
+  }
+  ReactDOM.render(<Clock/>,document.getElementById('root'))
+</script>
+</html>
