@@ -3,17 +3,20 @@ const e = React.createElement;
 class LikeButton extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { liked: false };
+        this.state = { liked: false, isHappy: false };
     }
 
     render() {
-        if (this.state.liked) {
+        if (this.state.liked && this.state.isHappy) {
             return '你在🐶叫什么！';
         }
 
         return e(
             'button', { onClick: () => this.setState({ liked: true }) },
-            '汪汪'
+            '汪汪',
+            'button', { onClick: () => this.setState({ liked: true }) },
+            '大胆',
+
         );
     }
 }
