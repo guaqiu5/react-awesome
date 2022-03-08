@@ -1,3 +1,9 @@
+/*
+ * @Author: guaqiu 
+ * @Date: 2022-03-07 23:52:44 
+ * @Last Modified by:   guaqiu 
+ * @Last Modified time: 2022-03-07 23:52:44 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -5,7 +11,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-<App/>,
+  <App/>,
   document.getElementById('root')
 );
 
