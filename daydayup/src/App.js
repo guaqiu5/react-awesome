@@ -1,13 +1,15 @@
 import List from './List.js';
 import Increase from './Increase.js'
 import ToDos from './ToDos.js';
+import Field1 from './hooks.js';
+import Field2 from './hooks.js'
+import React from 'react';
+const fieldDom =React.createRef()
 function App() {
   return (
     <div className="App" style={{color:'green'}}>
-    <h1>hello! JSX</h1>
-   <List list={[`杂鱼`,`土鸡`,`傻鸟`]}/>
-   <Increase></Increase>
-   <ToDos items={[`吃饭`,`睡觉`]}/>
+    <h1>hello! Hooks</h1>
+  <Field2></Field2>
     </div>
   );
 }

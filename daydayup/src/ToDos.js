@@ -2,7 +2,7 @@
  * @Author: guaqiu 
  * @Date: 2022-03-08 13:36:40 
  * @Last Modified by: guaqiu
- * @Last Modified time: 2022-03-08 16:42:59
+ * @Last Modified time: 2022-03-08 17:10:11
  */
 
 import React ,{Component} from "react";
@@ -15,12 +15,13 @@ function Item(props){
 class List extends Component{
     constructor(props){
         super(props)
+        this.state={}
     }
     render(){
        return <ul>
-        {this.props.items.map((item)=>{
-       return (<div><Item item={item} key={item}></Item>
-                <button onClick={(e)=>{this.props.isFinished(item)}}>完成</button>
+        {this.props.items.map((item,index)=>{
+       return (<div key={item}><Item item={item} />
+       <button onClick={(e)=>{this.props.isFinished(item)}} >完成</button>
                 </div>)
         })}
         </ul>
@@ -29,8 +30,8 @@ class List extends Component{
 
 class AddItem extends Component{
     constructor(props){
-        super(props)
-        
+        super(props)  
+        this.state={} 
     }
     
     render(){
@@ -84,7 +85,9 @@ class ToDos extends Component{
             handleChange={this.handleChange} 
             handleClick={this.handleClick}
             ></AddItem>
-            <List items={this.state.items} isFinished={()=>{(this.isFinished())}}/>
+            <List items={this.state.items} 
+            isFinished={()=>{(this.isFinished())}}   
+            />
            
         </div>
     }

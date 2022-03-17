@@ -1,8 +1,8 @@
 /*
  * @Author: guaqiu 
  * @Date: 2022-03-07 23:52:04 
- * @Last Modified by:   guaqiu 
- * @Last Modified time: 2022-03-07 23:52:04 
+ * @Last Modified by: guaqiu
+ * @Last Modified time: 2022-03-08 16:49:16
  */
 import React from "react"
 import logo from './logo.svg'
@@ -30,8 +30,8 @@ class Increase extends React.Component{
         return<div>
             <h3>现在的数量{this.state.num}</h3>
             <button onClick={()=>{this.add()}}>增加</button>
-            <img src={logo} ref='imgDom'></img>
-            <img src={logo} ref={img2Dom}></img>
+            <img src={logo} ref='imgDom' alt='11'></img>
+            <img src={logo} ref={img2Dom} alt='111'></img>
         </div>
     }
 }
